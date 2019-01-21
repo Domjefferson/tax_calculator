@@ -20,6 +20,8 @@ class TaxCalculator:
             return 830
         elif vehicle.co2_emissions in range(171, 191):
             return 820
+        elif vehicle.co2_emissions in range(191, 226):
+            return 1760
 
 
     def calculate_diesel(self,vehicle):
