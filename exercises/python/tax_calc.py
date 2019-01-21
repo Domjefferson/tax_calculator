@@ -1,3 +1,4 @@
-class TaxCalculater:
+class TaxCalculator:
     def calculate_tax(self,vehicle):
-        return -1
+        if vehicle.co2_emissions == 0:
+            return 0
