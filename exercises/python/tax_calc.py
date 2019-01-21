@@ -1,5 +1,14 @@
+import datetime
+
 class TaxCalculator:
-    def calculate_tax(self,vehicle):
+    def calculate_tax(self, vehicle):
+        if vehicle.date_of_first_registration == datetime.now.year:
+            self.calculate_tax_first_year(vehicle)
+        else:
+            self.calculate_tax_after_first_year(vehicle)
+
+
+    def calculate_tax_first_year(self,vehicle):
         if vehicle.co2_emissions == 0:
             return 0
 
@@ -27,6 +36,15 @@ class TaxCalculator:
               return 820
           elif vehicle.co2_emissions in range(191, 226):
               return 1760
+
+    def calculate_tax_after_first_year(self, vehicle):
+
+        if vehicle.fuel_type == "PETROL":
+            return 140
+        elif vehicle.fuel_type == "ELECTRIC":
+            return 0
+        elif vehicle.fuel_type == "ALTERNATIVE_FUEL":
+            return 130
 
 
    
