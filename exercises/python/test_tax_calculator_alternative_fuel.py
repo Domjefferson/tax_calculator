@@ -1,14 +1,14 @@
 import datetime
 import unittest
 
-from dummy_tax_calculator import DummyTaxCalculator
+from tax_calc import TaxCalculator
 from vehicle import Vehicle
 
 unittest.skip("alternative_fuel")
 class TaxCalculatorAlternativeFuelTest(unittest.TestCase):
     def setUp(self):
-        self.tax_calculator = DummyTaxCalculator()
-        self.FIRST_OF_APRIL_2017 = datetime.datetime.date(2019, 1, 1)
+        self.tax_calculator = TaxCalculator()
+        self.FIRST_OF_JAN_2019 = datetime.date(2019, 1, 1)
 
     def test_first_years_tax_for_alternative_fuel_0_grams_co2(self):
         vehicle = Vehicle(0, "ALTERNATIVE_FUEL", self.FIRST_OF_JAN_2019, 20000)
